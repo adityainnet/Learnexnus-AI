@@ -12,7 +12,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentFailed from "./pages/PaymentFailed";
 import Questions from "./pages/Questions";
 import Roadmap from "./pages/Roadmap";
-export const serverUrl = "http://localhost:8000"
+export const serverUrl = "https://learnexnus-ai1.onrender.com"
 
 function App() {
   const dispatch = useDispatch()
@@ -48,8 +48,8 @@ function App() {
         {/* Roadmap Route */}
         <Route path="/roadmap" element={userData ? <Roadmap /> : <Navigate to="/auth" replace />} />
 
-        <Route path="/payment-success" element={<PaymentSuccess/>}/>
-        <Route path="/payment-failed" element={<PaymentFailed/>}/>
+        <Route path="/payment-success" element={<PaymentSuccess />} />
+        <Route path="/payment-failed" element={<PaymentFailed />} />
       </Routes>
     </>
   );

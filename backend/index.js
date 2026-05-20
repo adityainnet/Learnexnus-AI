@@ -19,16 +19,19 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 app.post(
   "/api/credits/webhook",
-  express.raw({type:"application/json"}),
+  express.raw({ type: "application/json" }),
   stripeWebhook
 )
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://learnexnus-ai.onrender.com",
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  }),
+  })
 );
 app.use(express.json());
 app.use(cookieParser());
